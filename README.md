@@ -9,7 +9,7 @@ easy way to mix in zipkin tracing to their apps.
 
 ### Initialize the Zipkin Tracing Client
 ```javascript
-   var zipkin = require("node-zipkin");
+   var zipkin = require("express-zipkin").client;
 
    // initialize zipkin when you start the server
    zipkin.start({
@@ -25,7 +25,7 @@ easy way to mix in zipkin tracing to their apps.
 
 ### Initialize the Zipkin Tracing Client for local debugging with no scribe client
 ```javascript
-   var zipkin = require("node-zipkin");
+   var zipkin = require("express-zipkin").client;
 
    // initialize zipkin when you start the server
    zipkin.start({
@@ -40,14 +40,14 @@ easy way to mix in zipkin tracing to their apps.
 
 ### Add the zipkin tracing to your routes
 ```javascript
-   var zipkin = require("express-zipkin");
+   var zipkin = require("express-zipkin").client;
 
    app.all("*", zipkin.trace);
 ```
 
 ### Trace requests to clients
 ```javascript
-   var zipkin = require("express-zipkin");
+   var zipkin = require("express-zipkin").client;
 
    function (request, response, next) {
      var clientRequest = ...;
@@ -58,7 +58,7 @@ easy way to mix in zipkin tracing to their apps.
 
 ### Trace a DB call
 ```javascript
-   var zipkin = require("express-zipkin");
+   var zipkin = require("express-zipkin").client;
 
    function (request, response, next) {
      var redisClient = ...;
